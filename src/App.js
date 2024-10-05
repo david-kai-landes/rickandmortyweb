@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "../src/App.css";
+import Filter from "./components/Filter/filter";
+import Characters from "./components/Characaters/characters";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="div-title">
+        <h1 className="rick-morty-title">Rick And Morty</h1>
+      </div>
+      <div className="div-container">
+        <div className="div-row">
+          <div className="div-column-1">
+            <Filter />
+          </div>
+          <div className="div-column-2">
+            <Characters />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,38 +1,113 @@
+/* ................................................................................................ */
 .App {
-  text-align: center;
+  background: radial-gradient(circle, #000 0%, #00131a 70%, #000 100%);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
+.div-title {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.rick-morty-title {
+  font-size: 48px;
+  color: #00ff00;
+  font-family: "Comic Sans MS", "Chalkboard", cursive;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00,
+    0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
+  animation: glow 1.5s infinite alternate, wave 3s infinite,
+    flicker 0.1s infinite;
+}
+
+/* Cosmic star effects */
+.App::before,
+.App::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App::before {
+  background: radial-gradient(circle, #ffffff 2px, transparent 2px) repeat;
+  background-size: 50px 50px;
+  animation: starsMove 100s linear infinite;
+  opacity: 0.8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App::after {
+  background: radial-gradient(circle, #ffffff 1px, transparent 1px) repeat;
+  background-size: 100px 100px;
+  animation: starsMoveReverse 120s linear infinite;
+  opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* Star movement animations */
+@keyframes starsMove {
   from {
-    transform: rotate(0deg);
+    transform: translateY(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-1000px);
   }
 }
+
+@keyframes starsMoveReverse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1000px);
+  }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00,
+      0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
+  }
+}
+
+/* Wave animation */
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+    color: #00ff00;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.8;
+    color: #ffdd00;
+  }
+}
+/* ................................................................................................ */
