@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "../src/App.css";
+import "../src/Styling/App.css";
 import Filter from "./components/Filter/filter";
 import Characters from "./components/Characaters/characters";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
+  const [dataFetched, setDataFetched] = useState([]);
+
+  const { info, results } = dataFetched;
+
+  // console.log("wubba lubba dub dub", results);
   let rickAndMortyAPI = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
 
   useEffect(() => {
@@ -12,7 +17,8 @@ function App() {
       let data = await fetch(rickAndMortyAPI).then((rickandmortyRes) =>
         rickandmortyRes.json()
       );
-      console.log("wubba lubba dub dub", data);
+      setDataFetched(data);
+      // console.log("wubba lubba dub dub", data);
     })();
   }, [rickAndMortyAPI]);
 
@@ -27,7 +33,7 @@ function App() {
             <Filter />
           </div>
           <div className="div-column-2">
-            <Characters />
+            <Characters results={results} />
           </div>
         </div>
       </div>
