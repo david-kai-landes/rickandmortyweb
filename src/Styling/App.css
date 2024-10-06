@@ -111,3 +111,16 @@
   }
 }
 /* ................................................................................................ */
+.div-charatersContainer {
+  margin: 12px;
+  border: solid 3px white;
+  width: 70%;
+  /* height: 100%; */
+}
+
+.div-column-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px; /* Adjusts spacing between the items */
+  padding: 20px; /* Optional: Adds padding around the grid */
+}

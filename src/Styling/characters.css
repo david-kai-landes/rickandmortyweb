@@ -1,3 +1,29 @@
-.div-CharName {
+.div-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  object-fit: cover; /* Ensures images maintain their aspect ratio */
+  border-radius: 8px; /* Optional: Rounds the corners of the images */
+}
+
+.div-name {
   color: white;
+}
+
+.div-characters {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
+
+.div-characters:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }

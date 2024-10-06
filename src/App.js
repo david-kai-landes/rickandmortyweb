@@ -32,8 +32,10 @@ function App() {
           <div className="div-column-1">
             <Filter />
           </div>
-          <div className="div-column-2">
-            <Characters results={results} />
+          <div className="div-charatersContainer">
+            <div className="div-column-2">
+              <Characters results={results} />
+            </div>
           </div>
         </div>
       </div>
