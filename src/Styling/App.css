@@ -1,7 +1,11 @@
+* {
+  box-sizing: border-box;
+}
 /* ................................................................................................ */
 .App {
   background: radial-gradient(circle, #000 0%, #00131a 70%, #000 100%);
   overflow: hidden;
+  /* overflow-y: scroll; */
   position: relative;
   height: 100vh;
 }
@@ -9,6 +13,7 @@
 .div-title {
   display: flex;
   justify-content: center;
+  /* align-items: center; Center items vertically */
   z-index: 1;
 }
 
@@ -20,6 +25,7 @@
     0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
   animation: glow 1.5s infinite alternate, wave 3s infinite,
     flicker 0.1s infinite;
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 /* Cosmic star effects */
@@ -111,16 +117,31 @@
   }
 }
 /* ................................................................................................ */
-.div-charatersContainer {
+/* .div-charatersContainer {
   margin: 12px;
   border: solid 3px white;
-  width: 70%;
-  /* height: 100%; */
+  width: 70%; */
+/* height: 100%; */
+/* } */
+
+.div-charatersContainer {
+  margin: 12px;
+  border: solid 3px #30d5c8;
+  width: 60%;
+  display: grid;
+  gap: 26px;
+  padding: 20px;
+  height: 80vh;
+  background: linear-gradient(145deg, #1e1e1e, #00131a);
+  box-shadow: 0 0 20px #30d5c8, 0 0 40px #30d5c8;
+  border-radius: 20px;
+  overflow-y: auto;
 }
 
 .div-column-2 {
-  display: flex;
+  overflow-y: auto;
+  display: flow;
   flex-wrap: wrap;
-  gap: 26px; /* Adjusts spacing between the items */
-  padding: 20px; /* Optional: Adds padding around the grid */
+  gap: 26px;
+  padding: 20px;
 }
