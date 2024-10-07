@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../src/Styling/App.css";
 import Filter from "./components/Filter/filter";
 import Characters from "./components/Characaters/characters";
+import Pages from "./components/Pages/pages";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
@@ -38,6 +39,9 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="div-pages">
+        <Pages setPageNumber={setPageNumber} />
       </div>
     </div>
   );

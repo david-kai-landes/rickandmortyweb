@@ -90,6 +90,20 @@
   border-radius: 8px;
   background-color: #42d631;
 }
+.div-status-red {
+  width: 40%;
+  margin: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #ff0000;
+}
+.div-status-unKnown {
+  width: 40%;
+  margin: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #8caca2;
+}
 
 .div-status {
   font-weight: bold;

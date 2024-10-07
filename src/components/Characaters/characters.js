@@ -17,11 +17,29 @@ const Characters = ({ results }) => {
                 <img src={image} alt={name} />
                 <div className="div-name">{name}</div>
               </div>
-              <div className="div-status-green">
-                <div className="div-status">{status}</div>
-              </div>
+              {(() => {
+                if (status === "Alive") {
+                  return (
+                    <div className="div-status-green">
+                      <div className="div-status">{status}</div>
+                    </div>
+                  );
+                } else if (status === "Dead") {
+                  return (
+                    <div className="div-status-red">
+                      <div className="div-status">{status}</div>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div className="div-status-unKnown">
+                      <div className="div-status">{status}</div>
+                    </div>
+                  );
+                }
+              })()}
             </div>
-            {/* Back of the card */}
+            ;{/* Back of the card */}
             <div className="card-back">
               <div className="div-lastLocation">Last Location</div>
               <div>{location.name}</div>
