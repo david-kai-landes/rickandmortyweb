@@ -44,7 +44,7 @@ const Status = () => {
         >
           Status
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="accordionDetails">
           {status.map((item, index) => (
             <FilterOptions key={index} item={item} />
           ))}

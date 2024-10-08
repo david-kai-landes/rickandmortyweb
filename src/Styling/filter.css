@@ -1,3 +1,9 @@
 .filter-mainContainer {
   padding: 30px;
 }
+
+.accordionDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1;
+}

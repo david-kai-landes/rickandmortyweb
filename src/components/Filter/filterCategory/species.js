@@ -5,6 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FilterOptions from "../filterOptions";
 import { styled } from "@mui/material/styles";
+import "../../../Styling/filter.css";
 
 const StyledAccordion = styled(Accordion)({
   backgroundColor: "#1e1e1e",
@@ -56,7 +57,7 @@ const Species = () => {
         >
           Species
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="accordionDetails">
           {species.map((item, index) => (
             <FilterOptions key={index} item={item} />
           ))}
