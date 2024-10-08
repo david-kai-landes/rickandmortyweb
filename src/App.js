@@ -40,7 +40,7 @@ function App() {
       <div className="searchBar-mainCont">
         <div className="searchBar-innerCont">
           {/* <SearchBar onSearch={handleSearch} /> */}
-          <SearchBar setSearch={setSearch} />
+          <SearchBar setPageNumber={setPageNumber} setSearch={setSearch} />
         </div>
       </div>
       <div className="div-container">

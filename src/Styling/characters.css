@@ -74,6 +74,12 @@
   object-fit: cover;
 }
 
+/* .logo img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+} */
+
 /* Character name on the front */
 .div-name {
   padding: 10px;

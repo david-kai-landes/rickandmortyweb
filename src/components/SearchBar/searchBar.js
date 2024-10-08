@@ -4,12 +4,13 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import "../../Styling/searchBar.css";
 
-const SearchBar = ({ setSearch }) => {
+const SearchBar = ({ setPageNumber, setSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     if (setSearch) {
+      setPageNumber(1);
       setSearch(event.target.value);
     }
   };

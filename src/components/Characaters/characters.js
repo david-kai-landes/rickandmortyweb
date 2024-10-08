@@ -1,6 +1,8 @@
 import React from "react";
 import "../../Styling/characters.css";
 
+const logo = "../../images/rickandMorty_F_.jpg";
+
 const Characters = ({ results }) => {
   let display;
 
@@ -49,6 +51,12 @@ const Characters = ({ results }) => {
       );
     });
   } else {
+    // return (
+    //   <div className="logo">
+    //     <img src="../../images/rickandMorty_F_.jpg" alt="l00go" />
+    //     <div>YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</div>
+    //   </div>
+    // );
     display = "Wubba Lubba Dub Dub Babyyy!";
   }
 
