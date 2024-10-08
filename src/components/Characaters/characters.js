@@ -1,7 +1,6 @@
 import React from "react";
 import "../../Styling/characters.css";
-
-const logo = "../../images/rickandMorty_F_.jpg";
+import logo from "../../images/rickandMorty_F_-removebg.png";
 
 const Characters = ({ results }) => {
   let display;
@@ -11,10 +10,10 @@ const Characters = ({ results }) => {
       const { id, name, image, location, status } = item;
       // console.log(item);
       return (
-        <div key={id} className="card-container">
-          <div className="card-inner">
+        <div key={id} className="mainContainer">
+          <div className="theCard">
             {/* Front of the card */}
-            <div className="card-front">
+            <div className="theFront">
               <div className="div-image">
                 <img src={image} alt={name} />
                 <div className="div-name">{name}</div>
@@ -41,8 +40,8 @@ const Characters = ({ results }) => {
                 }
               })()}
             </div>
-            ;{/* Back of the card */}
-            <div className="card-back">
+            {/* Back of the card */}
+            <div className="theBack">
               <div className="div-lastLocation">Last Location</div>
               <div>{location.name}</div>
             </div>
@@ -51,17 +50,16 @@ const Characters = ({ results }) => {
       );
     });
   } else {
-    // return (
-    //   <div className="logo">
-    //     <img src="../../images/rickandMorty_F_.jpg" alt="l00go" />
-    //     <div>YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</div>
-    //   </div>
-    // );
-    display = "Wubba Lubba Dub Dub Babyyy!";
+    return (
+      <div className="div-logo">
+        <img src={logo} alt="logo" />
+        <div className="div-msg">Wubba Lubba Dub Dub Babyyy!</div>
+      </div>
+      // display = "Wubba Lubba Dub Dub Babyyy!";
+    );
   }
 
   return <div className="characters-grid">{display}</div>;
 };
 
 export default Characters;
-// console.log("wubba lubba dub dub", results);

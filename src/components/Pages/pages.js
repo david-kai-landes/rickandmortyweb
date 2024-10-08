@@ -1,52 +1,37 @@
-import React from "react";
+import * as React from "react";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import "../../Styling/pages.css";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
 
-//------------------------------------------------------------//
-const ShakeButton = styled(Button)({
-  background: "linear-gradient(45deg, #00ff00, #1e1e1e, #00131a)",
-  color: "#fff",
-  padding: "10px 20px",
-  borderRadius: "8px",
-  textTransform: "uppercase",
-  transition: "0.2s",
-  "&:hover": {
-    animation: "shake 0.5s infinite",
-  },
-  "@keyframes shake": {
-    "0%, 100%": {
-      transform: "translateX(0)",
-    },
-    "25%": {
-      transform: "translateX(-4px)",
-    },
-    "50%": {
-      transform: "translateX(4px)",
-    },
-    "75%": {
-      transform: "translateX(-4px)",
-    },
-  },
-});
-
-export default function Pages({ pageNumber, setPageNumber }) {
-  const next = () => {
-    setPageNumber((val) => val + 1);
-  };
-  const prev = () => {
-    if (pageNumber === 1) return;
-    setPageNumber((val) => val - 1);
-  };
-
+export default function Pages({ info, pageNumber, setPageNumber }) {
   return (
-    <div className="shakeButton-Container">
-      <ShakeButton onClick={prev} variant="contained">
-        Prev
-      </ShakeButton>
-      <ShakeButton onClick={next} variant="contained">
-        Next
-      </ShakeButton>
-    </div>
+    <Stack spacing={2} alignItems="center">
+      <Pagination
+        count={info?.pages}
+        size="large"
+        page={pageNumber}
+        onChange={(event, value) => setPageNumber(value)}
+        sx={{
+          "& .MuiPaginationItem-root": {
+            backgroundColor: "#1e1e1e",
+            color: "#00ff00",
+            borderRadius: "50%",
+            boxShadow: "0 0 10px #00ff00",
+            "&:hover": {
+              backgroundColor: "#333",
+              boxShadow: "0 0 15px #00ff00",
+            },
+            "&.Mui-selected": {
+              backgroundColor: "#00ff00",
+              color: "#000",
+              boxShadow: "0 0 20px #00ff00",
+              "&:hover": {
+                backgroundColor: "#00cc00",
+              },
+            },
+          },
+        }}
+      />
+    </Stack>
   );
 }

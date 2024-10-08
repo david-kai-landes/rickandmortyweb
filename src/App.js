@@ -8,7 +8,7 @@ import SearchBar from "./components/SearchBar/searchBar";
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
 
-  const [search, setSearch] = useState("Morty");
+  const [search, setSearch] = useState("");
 
   const [dataFetched, setDataFetched] = useState([]);
 
@@ -27,11 +27,6 @@ function App() {
     })();
   }, [rickAndMortyAPI]);
 
-  // const handleSearch = (value) => {
-  //   console.log("Search term:", value);
-  //   // You can implement your search logic here
-  // };
-
   return (
     <div className="App">
       <div className="div-title">
@@ -39,13 +34,12 @@ function App() {
       </div>
       <div className="searchBar-mainCont">
         <div className="searchBar-innerCont">
-          {/* <SearchBar onSearch={handleSearch} /> */}
           <SearchBar setPageNumber={setPageNumber} setSearch={setSearch} />
         </div>
       </div>
       <div className="div-container">
         <div className="div-row">
-          <div className="div-column-1">
+          <div className="app-filterContainer">
             <Filter />
           </div>
           <div className="div-charatersContainer">
@@ -56,7 +50,11 @@ function App() {
         </div>
       </div>
       <div className="div-pages">
-        <Pages pageNumber={pageNumber} setPageNumber={setPageNumber} />
+        <Pages
+          info={info}
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+        />
       </div>
     </div>
   );

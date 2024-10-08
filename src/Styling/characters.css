@@ -3,63 +3,47 @@
   box-sizing: border-box;
 }
 
-/* Container for the entire card grid */
 .characters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 40px;
   justify-items: center;
   padding: 20px;
 }
 
-/* Outer card container */
-.card-container {
-  perspective: 1000px;
+/* ................................................................ */
+.mainContainer {
   position: relative;
+  width: 230px;
+  height: 360px;
 }
-
-/* Inner card wrapper to manage the flip */
-.card-inner {
-  position: relative;
+.theCard {
+  position: absolute;
   width: 100%;
-  max-width: 260px;
-  height: 350px;
+  height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.5s;
+  will-change: transform;
 }
-
-/* Flip the card on hover */
-.card-container:hover .card-inner {
+.theCard:hover {
   transform: rotateY(180deg);
 }
 
-/* Front and back faces of the card */
-.card-front,
-.card-back {
-  /* position: absolute; */
-  top: 0;
-  left: 0;
+.theFront {
+  position: absolute;
   width: 100%;
-  /* height: 101%; */
-  backface-visibility: hidden;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Card front styles */
-.card-front {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  height: 100%;
+  color: #333;
   background-color: #1e1e1e;
   color: #ffffff;
 }
 
-/* Card back styles */
-.card-back {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.theBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: #333;
-  color: #ffffff;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,18 +51,45 @@
   transform: rotateY(180deg);
 }
 
+.theFront,
+.theBack {
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
 /* Image styles */
 .div-image img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-radius: 12px;
+}
+/* //....................................................................// */
+.div-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
 }
 
-/* .logo img {
-  width: 100%;
-  height: 250px;
+.div-msg {
+  color: #ffffff;
+  margin-top: 2px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.div-logo img {
+  width: 35%;
+  /* height: 250px; */
   object-fit: cover;
-} */
+}
 
 /* Character name on the front */
 .div-name {
@@ -87,6 +98,7 @@
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
   border-top: 1px solid #333;
+  height: 60px;
 }
 
 .div-status-green {
@@ -95,6 +107,7 @@
   padding: 4px;
   border-radius: 8px;
   background-color: #42d631;
+  margin: 7px;
 }
 .div-status-red {
   width: 40%;
@@ -102,6 +115,7 @@
   padding: 4px;
   border-radius: 8px;
   background-color: #ff0000;
+  margin: 7px;
 }
 .div-status-unKnown {
   width: 40%;
@@ -109,6 +123,7 @@
   padding: 4px;
   border-radius: 8px;
   background-color: #8caca2;
+  margin: 7px;
 }
 
 .div-status {
@@ -116,9 +131,4 @@
   font-weight: bold;
   display: flex;
   justify-content: center;
-}
-
-/* Optional hover effects */
-.card-container:hover .card-front .div-image img {
-  transform: scale(1.1);
 }
