@@ -120,7 +120,7 @@
 .div-charatersContainer {
   margin: 1% 1% 1% 4%;
   border: solid 3px #30d5c8;
-  width: 70%;
+  width: 60%;
   display: grid;
   gap: 26px;
   padding: 20px;
@@ -147,8 +147,9 @@
 .div-row {
   flex-direction: row-reverse;
   display: flex;
-  justify-content: initial;
+  justify-content: space-evenly;
 }
 .app-filterContainer {
   padding: 30px;
+  width: 20%;
 }

@@ -23,7 +23,7 @@ function App() {
         rickandmortyRes.json()
       );
       setDataFetched(data);
-      // console.log("wubba lubba dub dub", data);
+      console.log("wubba lubba dub dub", data);
     })();
   }, [rickAndMortyAPI]);
 
