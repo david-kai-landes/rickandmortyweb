@@ -118,13 +118,14 @@
 }
 /* ................................................................. */
 .div-charatersContainer {
-  margin: 12px;
+  /* margin: 12px auto; */
+  margin: 1% 4% 1% 4%;
   border: solid 3px #30d5c8;
-  width: 60%;
+  width: 70%;
   display: grid;
   gap: 26px;
   padding: 20px;
-  height: 80vh;
+  height: 73vh;
   background: linear-gradient(145deg, #1e1e1e, #00131a);
   box-shadow: 0 0 20px #30d5c8, 0 0 40px #30d5c8;
   border-radius: 20px;
@@ -139,4 +140,7 @@
   padding: 20px;
 }
 /* ................................................................. */
-
+.searchBar-innerCont {
+  margin: 0px auto;
+  max-width: 500px;
+}

@@ -7,7 +7,7 @@ const Characters = ({ results }) => {
   if (results) {
     display = results.map((item) => {
       const { id, name, image, location, status } = item;
-      console.log(item);
+      // console.log(item);
       return (
         <div key={id} className="card-container">
           <div className="card-inner">

@@ -30,11 +30,12 @@ const ShakeButton = styled(Button)({
   },
 });
 
-export default function Pages({ setPageNumber }) {
+export default function Pages({ pageNumber, setPageNumber }) {
   const next = () => {
     setPageNumber((val) => val + 1);
   };
   const prev = () => {
+    if (pageNumber === 1) return;
     setPageNumber((val) => val - 1);
   };
 
