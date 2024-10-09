@@ -6,26 +6,31 @@ import Pages from "./components/Pages/pages";
 import SearchBar from "./components/SearchBar/searchBar";
 
 function App() {
-  const [pageNumber, setPageNumber] = useState(1);
+  let [pageNumber, setPageNumber] = useState(1);
 
-  const [search, setSearch] = useState("");
+  let [search, setSearch] = useState("");
+  let [status, setStatus] = useState("");
+  let [gender, setGender] = useState("");
 
-  const [dataFetched, setDataFetched] = useState([]);
-
-  const { info, results } = dataFetched;
+  let [dataFetched, setDataFetched] = useState([]);
+  let { info, results } = dataFetched;
 
   // console.log("wubba lubba dub dub", results);
-  let rickAndMortyAPI = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let rickAndMortyAPI = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}`;
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(rickAndMortyAPI).then((rickandmortyRes) =>
-        rickandmortyRes.json()
-      );
-      setDataFetched(data);
-      console.log("wubba lubba dub dub", data);
+      try {
+        let data = await fetch(rickAndMortyAPI).then((rickandmortyRes) =>
+          rickandmortyRes.json()
+        );
+        setDataFetched(data);
+        console.log("wubba lubba dub dub", data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     })();
-  }, [rickAndMortyAPI]);
+  }, [rickAndMortyAPI, gender]);
 
   return (
     <div className="App">
@@ -40,7 +45,11 @@ function App() {
       <div className="div-container">
         <div className="div-row">
           <div className="app-filterContainer">
-            <Filter />
+            <Filter
+              setGender={setGender}
+              setStatus={setStatus}
+              setPageNumber={setPageNumber}
+            />
           </div>
           <div className="div-charatersContainer">
             <div className="div-column-2">

@@ -32,7 +32,7 @@ const StyledAccordion = styled(Accordion)({
   },
 });
 
-const Status = () => {
+const Status = ({ setStatus, setPageNumber }) => {
   let status = ["Alive", "Dead", "unknown"];
   return (
     <div className="status-mainContainer">
@@ -46,7 +46,13 @@ const Status = () => {
         </AccordionSummary>
         <AccordionDetails className="accordionDetails">
           {status.map((item, index) => (
-            <FilterOptions key={index} item={item} />
+            <FilterOptions
+              setStatus={setStatus}
+              setPageNumber={setPageNumber}
+              key={item}
+              index={index}
+              item={item}
+            />
           ))}
         </AccordionDetails>
       </StyledAccordion>

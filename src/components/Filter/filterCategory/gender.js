@@ -33,8 +33,9 @@ const StyledAccordion = styled(Accordion)({
   },
 });
 
-const Gender = () => {
+const Gender = ({ setPageNumber, setGender }) => {
   const genders = ["Female", "Male", "Genderless", "unknown"];
+
   return (
     <div className="gender-mainContainer">
       <StyledAccordion>
@@ -46,8 +47,13 @@ const Gender = () => {
           Gender
         </AccordionSummary>
         <AccordionDetails className="accordionDetails">
-          {genders.map((item, index) => (
-            <FilterOptions key={index} item={item} />
+          {genders.map((item) => (
+            <FilterOptions
+              setGender={setGender}
+              setPageNumber={setPageNumber}
+              key={item}
+              item={item}
+            />
           ))}
         </AccordionDetails>
       </StyledAccordion>

@@ -1,15 +1,31 @@
-import * as React from "react";
+import React, { useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-const FilterOptions = ({ item }) => {
+const FilterOptions = ({ item, setStatus, setPageNumber, setGender }) => {
+  //
+  const [checked, setChecked] = useState(false);
+  //
+  const handleFilterChange = (event) => {
+    const isChecked = event.target.checked;
+    setChecked(isChecked);
+    if (setStatus) {
+      setStatus(isChecked ? item : "");
+    }
+    if (setGender) {
+      setGender(isChecked ? item : "");
+    }
+    setPageNumber(1);
+  };
+  //
   return (
     <div className="filterOpt-checkCont">
       <FormGroup>
         <FormControlLabel
           control={
             <Checkbox
+              onChange={handleFilterChange}
               sx={{
                 color: "#30d5c8",
                 "&.Mui-checked": {

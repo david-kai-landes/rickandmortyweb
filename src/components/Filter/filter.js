@@ -4,12 +4,12 @@ import Species from "./filterCategory/species";
 import Status from "./filterCategory/status";
 import "../../Styling/filter.css";
 //
-const Filter = () => {
+const Filter = ({ setStatus, setPageNumber, setGender }) => {
   return (
     <div className="filter-mainContainer">
-      <Gender />
+      <Gender setGender={setGender} setPageNumber={setPageNumber} />
       <Species />
-      <Status />
+      <Status setPageNumber={setPageNumber} setStatus={setStatus} />
     </div>
   );
 };
