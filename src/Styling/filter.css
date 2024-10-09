@@ -11,27 +11,27 @@
 .unSelect-All {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #1e1e1e; /* Dark background */
-  color: #00ff00; /* Neon green text */
-  border: 2px solid #00ff00; /* Neon green border */
-  border-radius: 8px; /* Slightly rounded corners */
+  background-color: #1e1e1e;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Initial glow */
-  transition: all 0.3s ease; /* Smooth hover animation */
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
 .unSelect-All:hover {
-  background-color: #333; /* Darker background on hover */
-  box-shadow: 0 0 30px rgba(0, 255, 0, 0.8); /* Intense glow on hover */
-  transform: scale(1.05); /* Slightly increase the size on hover */
+  background-color: #333;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+  transform: scale(1.05);
 }
 
 .unSelect-All:active {
-  transform: scale(0.95); /* Shrinks the button when clicked */
+  transform: scale(0.95);
 }
 
 .unSelect-All-text {
   font-weight: bold;
-  letter-spacing: 1px; /* Add some letter spacing for a futuristic feel */
+  letter-spacing: 1px;
 }
