@@ -33,7 +33,7 @@ const StyledAccordion = styled(Accordion)({
   },
 });
 
-const Species = () => {
+const Species = ({ setPageNumber, setSpecies }) => {
   let species = [
     "Human",
     "Alien",
@@ -59,7 +59,12 @@ const Species = () => {
         </AccordionSummary>
         <AccordionDetails className="accordionDetails">
           {species.map((item, index) => (
-            <FilterOptions key={index} item={item} />
+            <FilterOptions
+              setSpecies={setSpecies}
+              setPageNumber={setPageNumber}
+              key={item}
+              item={item}
+            />
           ))}
         </AccordionDetails>
       </StyledAccordion>

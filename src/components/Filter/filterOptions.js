@@ -3,7 +3,13 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-const FilterOptions = ({ item, setStatus, setPageNumber, setGender }) => {
+const FilterOptions = ({
+  item,
+  setStatus,
+  setPageNumber,
+  setGender,
+  setSpecies,
+}) => {
   //
   const [checked, setChecked] = useState(false);
   //
@@ -15,6 +21,9 @@ const FilterOptions = ({ item, setStatus, setPageNumber, setGender }) => {
     }
     if (setGender) {
       setGender(isChecked ? item : "");
+    }
+    if (setSpecies) {
+      setSpecies(isChecked ? item : "");
     }
     setPageNumber(1);
   };

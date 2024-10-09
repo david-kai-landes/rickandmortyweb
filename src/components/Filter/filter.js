@@ -4,13 +4,30 @@ import Species from "./filterCategory/species";
 import Status from "./filterCategory/status";
 import "../../Styling/filter.css";
 //
-const Filter = ({ setStatus, setPageNumber, setGender }) => {
+const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
+  //
+  const clear = () => {
+    if (setStatus) setStatus("");
+    if (setPageNumber) setPageNumber(1);
+    if (setGender) setGender("");
+    if (setSpecies) setSpecies("");
+  };
+
   return (
-    <div className="filter-mainContainer">
-      <Gender setGender={setGender} setPageNumber={setPageNumber} />
-      <Species />
-      <Status setPageNumber={setPageNumber} setStatus={setStatus} />
-    </div>
+    <>
+      <div
+        onClick={clear}
+        className="unSelect-All"
+        aria-label="Unselect all filters"
+      >
+        <div className="unSelect-All-text">UnSelect All</div>
+      </div>
+      <div className="filter-mainContainer">
+        <Gender setGender={setGender} setPageNumber={setPageNumber} />
+        <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
+        <Status setPageNumber={setPageNumber} setStatus={setStatus} />
+      </div>
+    </>
   );
 };
 
