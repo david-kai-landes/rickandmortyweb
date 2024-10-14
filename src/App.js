@@ -14,9 +14,10 @@ function App() {
   let [species, setSpecies] = useState("");
 
   let [dataFetched, setDataFetched] = useState([]);
+
   let { info, results } = dataFetched;
 
-  // console.log("wubba lubba dub dub", results);
+  //  ("wubba lubba dub dub", results);
   let rickAndMortyAPI = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
           rickandmortyRes.json()
         );
         setDataFetched(data);
-        console.log("wubba lubba dub dub", data);
+        // console.log("wubba lubba dub dub", data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

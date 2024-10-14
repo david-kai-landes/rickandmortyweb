@@ -7,7 +7,18 @@ const Characters = ({ results }) => {
 
   if (results) {
     display = results.map((item) => {
-      const { id, name, image, location, status } = item;
+      // console.log("=================", item);
+      const {
+        id,
+        name,
+        image,
+        location,
+        status,
+        species,
+        gender,
+        origin,
+        type,
+      } = item;
       // console.log(item);
       return (
         <div key={id} className="mainContainer">
@@ -42,8 +53,30 @@ const Characters = ({ results }) => {
             </div>
             {/* Back of the card */}
             <div className="theBack">
-              <div className="div-lastLocation">Last Location</div>
-              <div>{location.name}</div>
+              <div className="backOfCard">
+                <div className="backOfCardInnerCon">
+                  <div className="Title">Origin</div>
+                  <div className="description">{origin.name}</div>
+                </div>
+                <div className="backOfCardInnerCon">
+                  <div className="Title">Species</div>
+                  <div className="description">{species}</div>
+                </div>
+                {type !== "" ? (
+                  <div className="backOfCardInnerCon">
+                    <div className="Title">Type</div>
+                    <div className="description">{type}</div>
+                  </div>
+                ) : null}
+                <div className="backOfCardInnerCon">
+                  <div className="Title">Gender</div>
+                  <div className="description">{gender}</div>
+                </div>
+                <div className="backOfCardInnerCon">
+                  <div className="Title">Last Location</div>
+                  <div className="description">{location.name}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

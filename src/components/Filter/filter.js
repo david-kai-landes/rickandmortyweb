@@ -11,6 +11,7 @@ const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
     if (setPageNumber) setPageNumber(1);
     if (setGender) setGender("");
     if (setSpecies) setSpecies("");
+    window.location.reload(false);
   };
 
   return (

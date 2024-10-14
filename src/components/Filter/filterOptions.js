@@ -5,8 +5,8 @@ import Checkbox from "@mui/material/Checkbox";
 
 const FilterOptions = ({
   item,
-  setStatus,
   setPageNumber,
+  setStatus,
   setGender,
   setSpecies,
 }) => {
@@ -34,6 +34,7 @@ const FilterOptions = ({
         <FormControlLabel
           control={
             <Checkbox
+              checked={checked}
               onChange={handleFilterChange}
               sx={{
                 color: "#30d5c8",

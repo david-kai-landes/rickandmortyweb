@@ -5,7 +5,6 @@
 .App {
   background: radial-gradient(circle, #000 0%, #00131a 70%, #000 100%);
   overflow: hidden;
-  /* overflow-y: scroll; */
   position: relative;
   height: 100vh;
 }
@@ -13,7 +12,6 @@
 .div-title {
   display: flex;
   justify-content: center;
-  /* align-items: center; Center items vertically */
   z-index: 1;
 }
 
@@ -28,7 +26,6 @@
   transition: text-shadow 0.3s ease-in-out;
 }
 
-/* Cosmic star effects */
 .App::before,
 .App::after {
   content: "";
@@ -56,7 +53,6 @@
   opacity: 0.5;
 }
 
-/* Star movement animations */
 @keyframes starsMove {
   from {
     transform: translateY(0);
@@ -75,7 +71,6 @@
   }
 }
 
-/* Glow animation */
 @keyframes glow {
   0% {
     text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
@@ -86,7 +81,6 @@
   }
 }
 
-/* Wave animation */
 @keyframes wave {
   0%,
   100% {
@@ -97,7 +91,6 @@
   }
 }
 
-/* Flicker animation */
 @keyframes flicker {
   0%,
   18%,
@@ -130,7 +123,6 @@
   border-radius: 20px;
   overflow-y: auto;
 }
-/* margin: 12px auto; */
 
 .div-column-2 {
   overflow-y: auto;
